@@ -1,5 +1,15 @@
 //EXERCISE 1 / SLIDE-14 / PAGE 1-10
 
+//USE: find() and filter() to ansewer these questions
+
+//When does the PROG200 course start? X
+
+//What is the title of the PROG500 course? X
+
+//What are the titles of the courses that cost $50 or less?
+
+//What classes meet in "Classsroom 1"?
+
 let courses = [
     {
         CourseId: "PROG100",
@@ -47,7 +57,7 @@ function isIdProg200(course){
     // };
     return (course.CourseId == "PROG200"); 
 }
-let q1match = courses.find(isIdProg200);
+let q1match = courses.find(isIdProg200); //identify the one matching object and return that object
 console.log(q1match);
 console.log(q1match.StartDate);
 //console.log(courses.find(isIdProg200).StartDate);
@@ -78,23 +88,19 @@ console.log(courses.find((c) => c.CourseId == "PROG500").StartDate);
 //     return Number(c.Fee) <= 50;
 // }
 
-// let matchesLessThan50 = courses.filter(lessThan50);
+// let matchesLessThan50 = courses.filter(lessThan50); //identify all matching objects and then list of matches
 // for(i = 0; i < matchesLessThan50.length;i++){
 //     console.log(matchesLessThan50[i].Title);
 // }
-
+console.log("Q3 Answer: ");
 //ALL IN ONE LINE
-courses.filter(c => c.Fee <= 50).forEach(c=>console.log(c.Title));
+courses.filter(c => Number(c.Fee) <= 50).forEach(c=>console.log(c.Title));
 
-//USE: find() and filter() to ansewer these questions
+//QUESTION 4
+console.log("Q4 Answer: ");
+courses.filter(c => c.Location == "Classroom 1").forEach(c=>console.log(c.Title));
 
-//When does the PROG200 course start? X
 
-//What is the title of the PROG500 course? X
-
-//What are the titles of the courses that cost $50 or less?
-
-//What classes meet in "Classsroom 1"?
 
 
 
