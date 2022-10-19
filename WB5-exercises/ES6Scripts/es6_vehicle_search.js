@@ -68,14 +68,19 @@ let vehicles = [
 ];
 
 // Which vehicles are RED?
-//console.log(vehicles.find(r => r.color == "Red").licenseNo); Ask if there is a way to use find to get same result as filter (Im thinking use a function)
-vehicles.filter(r => r.color == "Red").forEach(r => console.log("Red Vehicles: " , r.licenseNo));
+//console.log(vehicles.find(r => r.color == "Red").licenseNo); 
+//Ask if there is a way to use find to get same result as filter (function)
+let vColor = vehicles.filter(r => r.color == "Red")
+vColor.forEach(r => console.log("Red Vehicles: " , r.licenseNo));
 
 // Which vehicles have registrations that are expired?
-vehicles.filter(e => e.registrationExpires < new Date()).forEach(r => console.log("Expired Registration: " , r.licenseNo));
+let vRegExp = vehicles.filter(e => e.registrationExpires < new Date())
+vRegExp.forEach(r => console.log("Expired Registration: " , r.licenseNo));
 
 // Which vehicles that hold at least 6 people?
-vehicles.filter(h => h.capacity >= 6).forEach(r => console.log("Minimum Capacity: " , r.licenseNo));
+let minCap = vehicles.filter(h => h.capacity >= 6)
+minCap.forEach(r => console.log("Minimum Capacity: " , r.licenseNo));
 
 // Which vehicles have license plates that end with "222"?
-vehicles.filter(e => e.licenseNo.endsWith("222")).forEach(r => console.log("Ends in 222: " , r.licenseNo));
+let endsIn222 = vehicles.filter(e => e.licenseNo.endsWith("222"))
+endsIn222.forEach(r => console.log("Ends in 222: " , r.licenseNo));
