@@ -8,3 +8,7 @@ let lockerAndAccessCode = [
 //What do you think these will output? Make a prediction before running code.
 console.log(lockerAndAccessCode[2][1]);
 console.log(lockerAndAccessCode[1]);
+
+//index out of range as ther is no third value on the inner lists
+// yields undefined
+console.log(lockerAndAccessCode[2][2]);
