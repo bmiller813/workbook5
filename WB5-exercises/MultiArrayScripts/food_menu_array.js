@@ -25,7 +25,8 @@ const DINNER = 2;
 const TITLES = ["breakfast items", "lunch items", "dinner items",];
 
 function showItem(item) {
-    console.log("\t", item.price, "\t", item.item) //USE TABS (\t) TO LINE EM UP
+    //USE TABS (\t) TO LINE EM UP
+    console.log("\t", item.price, "\t", item.item) 
 }
 
 function showItemsForMealTime(meal) {
@@ -33,7 +34,7 @@ function showItemsForMealTime(meal) {
     console.log(TITLES[meal]);
 
     //show the items for the selected meal
-    menu[meal].forEach(showItem);
+    menu[meal].forEach(showItem); //THIS IS THE KEY PART OF THE LONG ANSWER
 }
 
 let meal = BREAKFAST; // 0==BREAKFAST
