@@ -9,25 +9,35 @@
         {
             imagePath: "960x0.jpg",
             description: "Is This a Beach?",
+            alt: "image1"
         },
         {
             imagePath: "Beaches-Turks-Caicos-Overview.jpg",
             description: "No Sir Thy ist incorrect",
+            alt: "image2"
         },
         {
             imagePath: "",
             description: "Draw thy sword sire",
+            alt: "image3"
         },
     ]
 
     window.onload = () => {
         const images = document.getElementsByTagName("img");
         const paragraphs = document.getElementsByTagName("p");
-
+        
         for (i = 0; i < 3; i++) {
-            images[i].src = data[i].imagePath;
-            images[i].setAttribute("alt", data[i].description);
-            paragraphs[i].innerHTML = data[i].description;
+
+            image = image[i];
+            item = data[i];
+            p = paragraphs[i];
+            text = item.description;
+
+            image.src = item.imagePath;
+            image.setAttribute("alt", text);
+            p.innerHTML = text;
+            p.style.borderWidth = "1px solid black";
         }
         //if we don't convert we need a traditional for() loop with an index
         // const list = [...paragraphs]; //CONVERT TO ARRAY USING ...
