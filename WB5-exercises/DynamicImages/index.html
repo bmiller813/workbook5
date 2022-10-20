@@ -5,6 +5,7 @@
     <button id="clear">Clear All</button>
     <div id="display">Images will be here</div>
 </body>
+
 <script>
     const imageFiles = [
         {
@@ -26,7 +27,7 @@
         const add = document.getElementById("add");
         const clear = document.getElementById("clear");
         const display = document.getElementById("display");
-        
+
         imageFiles.forEach(image=>{
             const option = document.createElement ("option");
             option.innerHTML = image.title;
@@ -39,6 +40,7 @@
             const item = imageList.selectedOptions[0];//first and only selected item
             const img = document.createElement("img");
             img.src = item.value;
+            img.alt = item.dataset.description;
             img.style.objectFit = "contain";
             img.style.width = "300px";
             display.appendChild(img);
