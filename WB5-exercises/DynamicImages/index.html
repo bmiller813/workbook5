@@ -1,0 +1,53 @@
+<!--EXERCISE 1 / SLIDE-81 / PAGE 3-7-->
+<body>
+    <select id="imageList"></select>
+    <button id="add">Add Image</button>
+    <button id="clear">Clear All</button>
+    <div id="display">Images will be here</div>
+</body>
+<script>
+    const imageFiles = [
+        {
+            title: "Jujutsu ",
+            name: "images/Shounen.jpg",
+            description: "This is peak manga and you know it",
+        },
+        {
+            title: "Soul Eater ",
+            name: "images/SoulEater.jpg",
+            description: "Fire but ending was no bueno",
+        },
+    ];
+    
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const imageList = document.getElementById("imageList");
+        const add = document.getElementById("add");
+        const clear = document.getElementById("clear");
+        const display = document.getElementById("display");
+        
+        imageFiles.forEach(image=>{
+            const option = document.createElement ("option");
+            option.innerHTML = image.title;
+            option.value = image.name;
+            option.setAttribute("data-description", image.description);
+            imageList.appendChild(option);
+        });
+
+        add.addEventListener("click", (e)=>{
+            const item = imageList.selectedOptions[0];//first and only selected item
+            const img = document.createElement("img");
+            img.src = item.value;
+            img.style.objectFit = "contain";
+            img.style.width = "300px";
+            display.appendChild(img);
+        });
+
+        clear.addEventListener("click", (e)=>{
+            display.innerHTML = "";
+        });
+
+    });
+
+</script>
